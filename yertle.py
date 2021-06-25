@@ -63,6 +63,20 @@ def showhide():
     else:
         yertle.showturtle()
 
+def endgame():
+    yertle.getscreen().bye()
+
+# set up the window and display instructions
+yertle.getscreen().setup(width=500, height=500)
+yertle.hideturtle()
+yertle.penup()
+yertle.setposition(-240.00,230.00)
+yertle.write("Try the following keys: arrows, c, s, h, d, u, +, -", font=("Arial", 16, "normal"))
+yertle.setposition(-240.00,210.00)
+yertle.write("Type 'q' to quit", font=("Arial", 16, "normal"))
+yertle.home()
+yertle.showturtle()
+
 # listen for key presses
 turtle.listen()
 
@@ -77,6 +91,7 @@ turtle.onkey(draw, "d")
 turtle.onkey(up, "u")
 turtle.onkey(wider, "plus")
 turtle.onkey(narrower, "minus")
+turtle.onkey(endgame, "q")
 
 # start the event loop
 turtle.mainloop()
