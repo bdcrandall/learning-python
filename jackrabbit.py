@@ -3,7 +3,7 @@ import random
 
 # constants
 min_number = 1
-max_number = 10
+max_number = 100
 spook_distance = 3
 max_hop_size = 7
 
@@ -14,6 +14,9 @@ max_guesses = 20
 # place the rabbit
 rabbit = random.randint(min_number,max_number)
 
+# print instructions
+print (f"\nThe jackrabbit is somewhere between {min_number} and {max_number}.  You have {max_guesses} attempts to catch him.  Be careful, if you get too close he hops away!\n")
+
 # gameplay loop: play until guess limit is reaches or rabbit is caught
 while (number_of_guesses < max_guesses):
     # calculate remaining guesses
@@ -21,9 +24,9 @@ while (number_of_guesses < max_guesses):
 
     # print message for user to enter their guess
     if guesses_left == 1:
-        print (f"Guess a number between {min_number} and {max_number}. You have {guesses_left} more chance left to catch the rabbit!")
+        print (f"Enter a number between {min_number} and {max_number}.  You have {guesses_left} more chance left to catch the rabbit!")
     else:
-        print (f"Guess a number between {min_number} and {max_number}. You have {guesses_left} chances left to catch the rabbit!")
+        print (f"Enter a number between {min_number} and {max_number}.  You have {guesses_left} more chances left to catch the rabbit!")
 
     # get user guess
     guess = input()
